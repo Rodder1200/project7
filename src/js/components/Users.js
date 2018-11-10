@@ -39,7 +39,7 @@ class Users extends Component {
       <div className="user" key={user.id}>
         <img
           src={user.photo}
-          srcset={user.photo + " 2x"}
+          srcSet={user.photo + " 2x"}
           alt={user.name}
           className="user__img"
         />

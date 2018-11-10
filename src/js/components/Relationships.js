@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import HTML from "../../imgs/html.svg";
+import CSS from "../../imgs/css.svg";
+import JavaScript from "../../imgs/javascript.svg";
+
 export default class Relationships extends Component {
   render() {
     return (
@@ -10,7 +14,8 @@ export default class Relationships extends Component {
           </h2>
           <div className="flex-cont">
             <article className="web">
-              <img src="../../imgs/html.svg" alt="html" className="web-img" />
+              <HTML alt="html" className="web-img" />
+              {/* <img src="../../imgs/html.svg" alt="html" className="web-img" /> */}
               <div className="web-text">
                 <h3 className="heading-3">I'm in love with HTML</h3>
                 <p className="par-2">
@@ -20,7 +25,8 @@ export default class Relationships extends Component {
               </div>
             </article>
             <article className="web">
-              <img src="../../imgs/css.svg" alt="css" className="web-img" />
+              <CSS alt="css" className="web-img" />
+              {/* <img src="../../imgs/css.svg" alt="css" className="web-img" /> */}
               <div className="web-text">
                 <h3 className="heading-3">CSS is my best friend</h3>
                 <p className="par-2">
@@ -31,11 +37,12 @@ export default class Relationships extends Component {
               </div>
             </article>
             <article className="web">
-              <img
+              <JavaScript alt="javascript" className="web-img" />
+              {/* <img
                 src="../../imgs/javascript.svg"
                 alt="javascript"
                 className="web-img"
-              />
+              /> */}
               <div className="web-text">
                 <h3 className="heading-3">JavaScript is my passion</h3>
                 <p className="par-2">

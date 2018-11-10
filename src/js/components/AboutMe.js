@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import ManMobile from "../../imgs/man-mobile.svg";
+
 export default class AboutMe extends Component {
   render() {
     return (
@@ -7,11 +9,12 @@ export default class AboutMe extends Component {
         <div className="container">
           <h2 className="heading-2">Let's get acquainted</h2>
           <div className="flex-cont">
-            <img
+            <ManMobile alt="man-mobile" className="about-img" />
+            {/* <img
               src="../../imgs/man-mobile.svg"
               alt="man-mobile"
               className="about-img"
-            />
+            /> */}
             <div className="about-info">
               <h3 className="heading-3">I am cool frontend developer</h3>
               <p className="par-2">
