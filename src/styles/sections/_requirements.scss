@@ -1,0 +1,100 @@
+.requirements {
+  box-sizing: border-box;
+  padding-top: 100px;
+  background: url("../../imgs/bg-2.jpg") no-repeat center/cover;
+  color: $bg_c;
+
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    padding-top: 115px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    padding-top: 45px;
+  }
+
+  .container {
+    padding: 0 15px;
+    @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+      padding: 0 45px;
+    }
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+      padding: 0 24px;
+    }
+  }
+
+  .heading-2 {
+    margin-bottom: 25px;
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+      margin: auto 20% 20px;
+    }
+  }
+
+  .par-2 {
+    margin-bottom: 21px;
+  }
+
+  .flex-cont {
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 118px;
+    @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+      margin-bottom: 133px;
+      justify-content: space-between;
+    }
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+      margin-bottom: 100px;
+    }
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  .req-img {
+    position: relative;
+    width: calc(50% - 30px);
+    max-width: 425px;
+    height: 100%;
+    margin-top: 15px;
+    @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+      margin-top: 3%;
+      max-width: 450px;
+    }
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+      width: calc(50% - 15px);
+      margin-top: 20px;
+    }
+    @media only screen and (max-width: 767px) {
+      width: calc(60% - 30px);
+      min-width: 260px;
+      margin: 0 auto;
+      order: 1;
+    }
+    svg {
+      position: absolute;
+      width: 100%;
+      @media only screen and (min-width: 1440px) {
+        right: 16%;
+      }
+      @media only screen and (max-width: 767px) {
+        position: relative;
+        height: 100%;
+      }
+    }
+  }
+
+  .req-text {
+    align-self: flex-start;
+    max-width: calc(50% - 15px);
+
+    @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+      width: 50%;
+    }
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+      order: 2;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 45px;
+    }
+  }
+}

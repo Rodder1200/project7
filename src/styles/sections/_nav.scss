@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+
+  &__item {
+    display: inline-block;
+    margin: 0 15px;
+  }
+
+  &__link {
+    color: inherit;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+      color: $primary_c;
+    }
+  }
+}

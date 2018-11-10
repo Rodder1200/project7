@@ -1,0 +1,25 @@
+@import "../../node_modules/normalize.scss/normalize.scss";
+
+@import "global/_vars";
+@import "global/_fonts";
+@import "global/_base";
+@import "global/_containers";
+@import "global/_hidden";
+
+@import "sections/_header";
+@import "sections/_nav";
+@import "sections/_side-nav";
+@import "sections/_logo";
+@import "sections/_user-panel";
+@import "sections/_banner";
+@import "sections/_btn";
+@import "sections/_paragraf";
+@import "sections/_headings";
+@import "sections/_about-me";
+@import "sections/_relationships";
+@import "sections/_requirements";
+@import "sections/_users";
+@import "sections/_registration";
+@import "sections/_footer";
+@import "sections/_line-menu";
+@import "sections/_modal-success";

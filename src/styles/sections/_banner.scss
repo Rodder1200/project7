@@ -1,0 +1,79 @@
+.banner {
+  padding-top: 64px;
+
+  background: url("../../imgs/bg-1.jpg") no-repeat center/cover;
+
+  .container {
+    padding: 132px 15px 100px;
+    color: $bg_c;
+
+    @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+      padding: 132px 45px 100px;
+    }
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+      padding: 112px 24px 100px;
+    }
+    @media only screen and (max-width: 767px) {
+      padding: 64px 15px 50px;
+      text-align: center;
+    }
+  }
+
+  .heading-1 {
+    max-width: 458px;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 767px) {
+      margin: 0 auto 8px;
+    }
+  }
+
+  .par-1 {
+    .banner-text-top {
+      margin: 0;
+      max-width: 458px;
+      @media only screen and (max-width: 1440px) {
+        display: inline;
+      }
+    }
+
+    .banner-text-bottom {
+      margin: 0;
+      max-width: 555px;
+      @media only screen and (max-width: 1440px) {
+        display: inline;
+      }
+      @media only screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+      max-width: 450px;
+    }
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+      font-size: 18px;
+      line-height: 1.35;
+      max-width: 405px;
+    }
+    @media only screen and (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  }
+
+  .btn {
+    margin-top: 35px;
+    margin-bottom: 40px;
+    @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+      margin-bottom: 60px;
+    }
+    @media only screen and (max-width: 1023px) {
+      margin-bottom: 20px;
+    }
+    @media only screen and (max-width: 767px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

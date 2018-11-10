@@ -1,0 +1,28 @@
+.header {
+  position: fixed;
+  z-index: 10;
+  height: 64px;
+  width: 100%;
+  background-color: $bg_c;
+
+  @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+    max-width: 1440px;
+  }
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    max-width: 1023px;
+  }
+
+  .container {
+    display: flex;
+    padding: 0 15px;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+      padding: 0 45px;
+    }
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+      padding: 0 24px;
+    }
+  }
+}
