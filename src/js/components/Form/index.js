@@ -8,7 +8,13 @@ import {
   clearFormData,
   showModal
 } from "../../actions/formActions";
-import { fetchUsers, clearMoreUsers } from "../../actions/userActions";
+
+import {
+  fetchUsers,
+  clearMoreUsers,
+  getMoreUsers,
+  getLinkToNext
+} from "../../actions/userActions";
 
 import NameComponent from "./NameComponent";
 import EmailComponent from "./EmailComponent";
@@ -33,8 +39,10 @@ class Form extends Component {
       token,
       modal,
       width,
+      users,
       fetchUsers,
-      clearMoreUsers,
+      getMoreUsers,
+      getLinkToNext,
       reset,
       clearFormData,
       showModal
@@ -62,7 +70,8 @@ class Form extends Component {
       .then(res => res.json())
       .then(res => {
         isWidthDown("sm", width) ? fetchUsers(6) : fetchUsers(3);
-        clearMoreUsers();
+        getMoreUsers("reset");
+        getLinkToNext("reset");
       })
       .catch(error => {
         console.log(error.message);
@@ -129,12 +138,20 @@ const mapStateToProps = state => ({
   position_valid: state.formData.position.valid,
   photo_valid: state.formData.photo.valid,
   token: state.formData.token,
-  modal: state.formData.modal
+  modal: state.formData.modal,
+  users: state.users.items
 });
 
 Form = connect(
   mapStateToProps,
-  { fetchToken, fetchUsers, clearMoreUsers, clearFormData, showModal }
+  {
+    fetchToken,
+    fetchUsers,
+    getMoreUsers,
+    getLinkToNext,
+    clearFormData,
+    showModal
+  }
 )(Form);
 
 export default (Form = reduxForm({

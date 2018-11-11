@@ -79,7 +79,7 @@ class Users extends Component {
         id="show_more"
         className="btn btn__sec"
         onClick={() => {
-          getMoreUsers(link, moreUsers);
+          getMoreUsers(moreUsers, link);
           getLinkToNext(link);
         }}
       >
