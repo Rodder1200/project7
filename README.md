@@ -2,7 +2,8 @@
 
 ## Technologies used: ReactJS, Redux, Gulp, SCSS, REST API, PerfectPixel, Adobe Photoshop.
 
-##Getting started
+## Getting started
+
 Site is published at https://rodder1200.github.io/project7/
 
 To get the frontend running locally:
