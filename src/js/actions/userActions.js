@@ -55,8 +55,6 @@ export const getLinkToNext = value => dispatch => {
       value == "3" || value == "6"
         ? `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=${value}`
         : value,
-      // newLink ||
-      //   "https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6",
       {
         method: "get"
       }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import store from "../js/store";
 
@@ -13,22 +14,31 @@ import Users from "./components/Users";
 import Registration from "./components/Registration";
 import Footer from "./components/Footer";
 
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+    suppressDeprecationWarnings: true
+  }
+});
+
 export default class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <React.Fragment>
-          <Header />
-          <SideNav />
-          <Banner />
-          <AboutMe />
-          <Relationships />
-          <Requirements />
-          <Users />
-          <Registration />
-          <Footer />
-        </React.Fragment>
-      </Provider>
+      <MuiThemeProvider theme={theme}>
+        <Provider store={store}>
+          <React.Fragment>
+            <Header />
+            <SideNav />
+            <Banner />
+            <AboutMe />
+            <Relationships />
+            <Requirements />
+            <Users />
+            <Registration />
+            <Footer />
+          </React.Fragment>
+        </Provider>
+      </MuiThemeProvider>
     );
   }
 }

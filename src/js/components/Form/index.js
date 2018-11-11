@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { reduxForm, Field, reset } from "redux-form";
+import withWidth, { isWidthDown } from "@material-ui/core/withWidth";
 
 import {
   fetchToken,
@@ -31,6 +32,7 @@ class Form extends Component {
       photo_value,
       token,
       modal,
+      width,
       fetchUsers,
       clearMoreUsers,
       reset,
@@ -59,7 +61,7 @@ class Form extends Component {
     )
       .then(res => res.json())
       .then(res => {
-        fetchUsers();
+        isWidthDown("sm", width) ? fetchUsers(6) : fetchUsers(3);
         clearMoreUsers();
       })
       .catch(error => {
@@ -98,7 +100,6 @@ class Form extends Component {
           <NameComponent />
           <EmailComponent />
           <PhoneComponent />
-
           <div className="flex-cont">
             <SelectComponent />
             <PhotoComponent />

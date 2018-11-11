@@ -10,11 +10,6 @@ export default class AboutMe extends Component {
           <h2 className="heading-2">Let's get acquainted</h2>
           <div className="flex-cont">
             <ManMobile alt="man-mobile" className="about-img" />
-            {/* <img
-              src="../../imgs/man-mobile.svg"
-              alt="man-mobile"
-              className="about-img"
-            /> */}
             <div className="about-info">
               <h3 className="heading-3">I am cool frontend developer</h3>
               <p className="par-2">
