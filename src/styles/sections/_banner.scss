@@ -1,7 +1,51 @@
 .banner {
   padding-top: 64px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./../imgs/bg-1_2k.jpg");
+  background-image: -webkit-image-set(
+    url("./../imgs/bg-1_2k.jpg") 1x,
+    url("./../imgs/bg-1_2k_retina.jpg") 2x
+  );
+  background-image: image-set(
+    url("./../imgs/bg-1_2k.jpg") 1x,
+    url("./../imgs/bg-1_2k_retina.jpg") 2x
+  );
 
-  background: url("./../imgs/bg-1.jpg") no-repeat center/cover;
+  @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+    background-image: url("./../imgs/bg-1_desktop.jpg");
+    background-image: -webkit-image-set(
+      url("./../imgs/bg-1_desktop.jpg") 1x,
+      url("./../imgs/bg-1_retina.jpg") 2x
+    );
+    background-image: image-set(
+      url("./../imgs/bg-1_desktop.jpg") 1x,
+      url("./../imgs/bg-1_retina.jpg") 2x
+    );
+  }
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    background-image: url("./../imgs/bg-1_tablet.jpg");
+    background-image: -webkit-image-set(
+      url("./../imgs/bg-1_tablet.jpg") 1x,
+      url("./../imgs/bg-1_tablet_retina.jpg") 2x
+    );
+    background-image: image-set(
+      url("./../imgs/bg-1_tablet.jpg") 1x,
+      url("./../imgs/bg-1_tablet_retina.jpg") 2x
+    );
+  }
+  @media only screen and (max-width: 767px) {
+    background-image: url("./../imgs/bg-1_mobile.jpg");
+    background-image: -webkit-image-set(
+      url("./../imgs/bg-1_mobile.jpg") 1x,
+      url("./../imgs/bg-1_mobile_retina.jpg") 2x
+    );
+    background-image: image-set(
+      url("./../imgs/bg-1_mobile.jpg") 1x,
+      url("./../imgs/bg-1_mobile_retina.jpg") 2x
+    );
+  }
 
   .container {
     padding: 132px 15px 100px;
