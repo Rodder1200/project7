@@ -71,6 +71,11 @@ gulp.task("copy:fonts", function() {
   return gulp.src("./src/fonts/**/*.*").pipe(gulp.dest("docs/fonts"));
 });
 
+/* ------------ Copy manifest ------------- */
+gulp.task("copy:manifest", function() {
+  return gulp.src("./src/manifest.json").pipe(gulp.dest("docs/"));
+});
+
 /* ------------ Copy images ------------- */
 gulp.task("copy:images", function() {
   return gulp
@@ -106,7 +111,7 @@ gulp.task("clear", function(done) {
 });
 
 /* ------------ Copy ------------- */
-gulp.task("copy", gulp.parallel("copy:fonts", "copy:images"));
+gulp.task("copy", gulp.parallel("copy:fonts", "copy:images", "copy:manifest"));
 
 /* ------------ Watchers ------------- */
 gulp.task("watch", function() {

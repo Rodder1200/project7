@@ -2,7 +2,9 @@ import {
   FETCH_USERS,
   FETCH_FIRST_USER,
   LINK_TO_NEXT_PAGE,
-  FETCH_MORE_USERS
+  FETCH_MORE_USERS,
+  FETCH_USERS_ERROR,
+  FETCH_FIRST_USER_ERROR
 } from "./types";
 
 export const fetchUsers = number => dispatch => {
@@ -13,15 +15,25 @@ export const fetchUsers = number => dispatch => {
         method: "get"
       }
     )
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw response;
+        }
+        return response.json();
+      })
       .then(data => {
         dispatch({
           type: FETCH_USERS,
-          payload: data.users
+          payload: data
         });
       })
       .catch(error => {
-        console.log(error.message);
+        error.json().then(errorMessage => {
+          dispatch({
+            type: FETCH_USERS_ERROR,
+            payload: errorMessage
+          });
+        });
       });
   };
   request();
@@ -35,7 +47,12 @@ export const fetchFirstUser = () => dispatch => {
         method: "get"
       }
     )
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw response;
+        }
+        return response.json();
+      })
       .then(data => {
         dispatch({
           type: FETCH_FIRST_USER,
@@ -43,7 +60,12 @@ export const fetchFirstUser = () => dispatch => {
         });
       })
       .catch(error => {
-        console.log(error.message);
+        error.json().then(errorMessage => {
+          dispatch({
+            type: FETCH_FIRST_USER_ERROR,
+            payload: errorMessage
+          });
+        });
       });
   };
   request();
@@ -103,7 +125,12 @@ export const getMoreUsers = (users, link) => dispatch => {
           });
         })
         .catch(error => {
-          console.log(error.message);
+          error.json().then(errorMessage => {
+            dispatch({
+              type: FETCH_USERS_ERROR,
+              payload: errorMessage
+            });
+          });
         });
     };
     request();
@@ -120,7 +147,12 @@ export const getMoreUsers = (users, link) => dispatch => {
           });
         })
         .catch(error => {
-          console.log(error.message);
+          error.json().then(errorMessage => {
+            dispatch({
+              type: FETCH_USERS_ERROR,
+              payload: errorMessage
+            });
+          });
         });
     };
     request();

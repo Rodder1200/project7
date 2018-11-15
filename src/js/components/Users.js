@@ -6,8 +6,8 @@ import withWidth, { isWidthDown } from "@material-ui/core/withWidth";
 
 import {
   fetchUsers,
-  getLinkToNext,
-  getMoreUsers
+  getMoreUsers,
+  getLinkToNext
 } from "../actions/userActions";
 
 class Users extends Component {
@@ -16,10 +16,8 @@ class Users extends Component {
 
     if (isWidthDown("sm", width)) {
       fetchUsers(3);
-      getLinkToNext(3);
     } else {
       fetchUsers(6);
-      getLinkToNext(6);
     }
   }
 
@@ -29,6 +27,8 @@ class Users extends Component {
       moreUsers,
       link,
       width,
+      error_message,
+      error_fails,
       getMoreUsers,
       getLinkToNext
     } = this.props;
@@ -94,6 +94,18 @@ class Users extends Component {
           <h5 className="heading-5">
             Attention! Sorting users by registration date
           </h5>
+          <div className="errors">
+            <h2 className="error">{error_message}</h2>
+            {error_fails.count ? (
+              <h4 className="error">{error_fails.count}</h4>
+            ) : null}
+            {error_fails.page ? (
+              <h4 className="error">{error_fails.page}</h4>
+            ) : null}
+            {error_fails.name ? (
+              <h4 className="error">{error_fails.name}</h4>
+            ) : null}
+          </div>
           <div className="flex-cont">{userItems}</div>
           {link ? button : null}
         </div>
@@ -105,7 +117,9 @@ class Users extends Component {
 const mapStateToProps = state => ({
   users: state.users.items,
   link: state.users.link,
-  moreUsers: state.users.moreItems
+  moreUsers: state.users.moreItems,
+  error_message: state.users.error_message,
+  error_fails: state.users.error_fails
 });
 
 export default compose(

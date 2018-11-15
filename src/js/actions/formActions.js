@@ -152,11 +152,25 @@ export const checkPhoto = file => dispatch => {
         photo.value = file;
         photo.valid = true;
         photo.error = false;
+      } else {
+        photo.name = false;
+        photo.value = false;
+        photo.valid = false;
+        photo.error = true;
       }
       dispatch({
         type: CHECK_PHOTO,
         payload: photo
       });
     };
+  } else {
+    photo.name = false;
+    photo.value = false;
+    photo.valid = false;
+    photo.error = true;
+    dispatch({
+      type: CHECK_PHOTO,
+      payload: photo
+    });
   }
 };
